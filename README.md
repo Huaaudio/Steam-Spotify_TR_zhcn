@@ -8,7 +8,8 @@
 
 `git clone https://github.com/HuxleyMc/Steam-Spotify`
 
-中文为
+中文为  
+
 `git clone https://github.com/c6161039/Steam-Spotify_TR_zhcn`
 
 或者[下载压缩包](https://github.com/HuxleyMc/Steam-Spotify/archive/master.zip)  [ZHCN](https://github.com/c6161039/Steam-Spotify_TR_zhcn/archive/master.zip)
