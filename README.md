@@ -1,48 +1,46 @@
 <h1 align="center">Steam Spotify V2</h1>
 
-<p>Show's your current playing song on steam as the game your playing</p>
+<p>把 Steam 游戏状态改为同步 Spotify 播放歌曲名</p>
 
 <!-- <img src="https://github.com/HuxleyMc/Steam-Spotify/blob/master/screenshot.PNG" width="300px"> -->
 
-### Install
+### 安装
 
 `git clone https://github.com/HuxleyMc/Steam-Spotify`
 
-Or
+或者[下载压缩包](https://github.com/HuxleyMc/Steam-Spotify/archive/master.zip)
 
-[Download Zip](https://github.com/HuxleyMc/Steam-Spotify/archive/master.zip)
-
-Install Required modules
-
+使用 
 ```
-npm install
+npm install 
 ```
+来安装依赖
 
-### Usage
+### 使用方法
 
-- Create a spotify app on [Spotify for Developers Dashboard](https://developer.spotify.com/dashboard/)
-- Edit the example.env and add the following
-- - Add your steam user and password
-- - Add your spotify id and secret
-- Rename example.env to .env
+- 在 [Spotify 开发者面板](https://developer.spotify.com/dashboard/) 创建一个 Spotify App 来获取客户端ID以及密钥
+- 打开 Example.env 并添加以下内容
+- - 添加您 Steam 的用户名和密码
+- - 添加您 Spotify 的客户端ID和客户端密钥
+- 最后把 Example.env 重命名为 .env
 
 <br/>
 
-### Starting
+### 运行项目
 
-To start run
+使用以下命令运行
 
 ```
-npm run build
-npm run start
+1. npm run build
+2. npm run start
 ```
 
 <br/>
 
-### Dev
+### 开发者模式
 
-To run dev
-NOTE: docker is currently not working
+运行开发模式
+提示: 在 docker 环境下 无法正常运行
 
 ```
 npm run dev
@@ -50,8 +48,8 @@ npm run dev
 
 <br/>
 
-## Authors
+## 作者
 
 - **Huxley** - [huxleymc](https://github.com/huxleymc)
 
-See also the list of [contributors](https://github.com/HuxleyMc/Steam-Spotify/contributors) who participated in this project.
+关于此项目的 [其他贡献者](https://github.com/HuxleyMc/Steam-Spotify/contributors) .
