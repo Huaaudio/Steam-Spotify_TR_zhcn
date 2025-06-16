@@ -1,5 +1,5 @@
 // Initialize dotenv as early as possible
-require("dotenv").config();
+import "dotenv/config";
 
 import express from "express";
 
@@ -14,8 +14,8 @@ const main = async () => {
   const {
     SteamUsername,
     SteamPassword,
-    SteamUsername2,    // Add second account
-    SteamPassword2,    // Add second account
+    SteamUsername2,
+    SteamPassword2,
     ClientId,
     ClientSecret,
     NotPlaying,
@@ -23,14 +23,17 @@ const main = async () => {
 
   const spotify = await initSpotify(ClientId, ClientSecret, server);
 
-  // Initialize both Steam accounts
-  const client1 = await initSteam(SteamUsername, SteamPassword);
-  const client2 = await initSteam(SteamUsername2, SteamPassword2);
+  const clients = [await initSteam(SteamUsername, SteamPassword)];
 
-  // Pass both clients to updatePlayingSong
-  await updatePlayingSong(spotify, [client1, client2], NotPlaying);
+  if (SteamUsername2 && SteamPassword2) {
+    clients.push(await initSteam(SteamUsername2, SteamPassword2));
+  }
+
+  await updatePlayingSong(spotify, clients, NotPlaying);
 };
 
-server.listen(8888, () => {});
+server.listen(8888, () => {
+  console.log("Server is running on http://localhost:8888");
+});
 
 main();
