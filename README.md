@@ -12,9 +12,9 @@
 
 `git clone https://github.com/c6161039/Steam-Spotify_TR_zhcn`
 
-或者[下载压缩包](https://github.com/HuxleyMc/Steam-Spotify/archive/master.zip)  [ZHCN](https://github.com/c6161039/Steam-Spotify_TR_zhcn/archive/master.zip)
+或者直接下载[EN](https://github.com/HuxleyMc/Steam-Spotify/archive/master.zip)  [ZHCN](https://github.com/c6161039/Steam-Spotify_TR_zhcn/archive/master.zip)
 
-使用 
+解压进入目录后，使用 
 ```
 npm install 
 ```
@@ -22,10 +22,10 @@ npm install
 
 ### 使用方法
 
-- 在 [Spotify 开发者面板](https://developer.spotify.com/dashboard/) 创建一个 Spotify App 来获取客户端ID以及密钥
+- 在 [Spotify 开发者面板](https://developer.spotify.com/dashboard/) 创建一个 Spotify App 来获取客户端ID以及密钥，Redirect URIs是http://127.0.0.1:8888/callback
 - 打开 Example.env 并添加以下内容
 - - 添加您 Steam 的用户名和密码
-- - 添加您 Spotify 的客户端ID和客户端密钥
+- - 添加您 Spotify App 的客户端ID和客户端密钥
 - 最后把 Example.env 重命名为 .env
 
 <br/>
@@ -38,6 +38,7 @@ npm install
 1. npm run build
 2. npm run start
 ```
+并按照提示进行 Spotify 认证以及 Steam 2FA (如果有的话)
 
 <br/>
 
