@@ -36,7 +36,7 @@ export const updatePlayingSong = async (
       if (songId !== currentId) {
         console.log("正在播放:", track.name);
         const { body: fullTrack } = await spotify.getTrack(track.id);
-        const playing = `正在聆听歌曲 ${fullTrack.name} • ${fullTrack.artists
+        const playing = `在听 ${fullTrack.name} • ${fullTrack.artists
           .map(({ name }) => name)
           .join(", ")}`;
         client.gamesPlayed(playing);

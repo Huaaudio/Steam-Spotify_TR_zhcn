@@ -38,6 +38,28 @@ const initSpotify = async (
     res.redirect(spotifyApi.createAuthorizeURL(scopes, "state"));
   });
 
+  // Add new endpoint for reauthentication
+  server.get("/reauth", (req, res) => {
+    // Clear existing tokens from config
+    config.set("access_token", null);
+    config.set("refresh_token", null);
+    config.set("expires_in", null);
+    
+    // Clear refresh interval if it exists
+    if (tokenRefreshInterval) {
+      clearInterval(tokenRefreshInterval);
+    }
+    
+    // Clear tokens from Spotify API
+    spotifyApi.setAccessToken("");
+    spotifyApi.setRefreshToken("");
+    
+    console.log("Spotify 授权已重置，重定向到登录页面...");
+    
+    // Redirect to login page
+    res.redirect("/login");
+  });
+
   server.get("/callback", async (req, res) => {
     const error = req.query.error;
     const code = req.query.code as string;
